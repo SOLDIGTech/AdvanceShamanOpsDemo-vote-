@@ -3,26 +3,22 @@
 ###################################################################################################
 name: ShamanOps
 on:
-  workflow_dispatch:
   push:
     branches: [ "main" ]
 jobs:
   shamanops:
-    uses: shamanops/resources/.github/workflows/base-cloud-stable.yaml@main
+    uses: shamanops/resources/.github/workflows/base-self-hosted-stable.yaml@main
     with:
-    ###################################################################################################
-    # Customer Customizations:
-    ###################################################################################################
-    #- Environments:
-    #- full-with-drp (dev/stg/prod/drp) | full (dev/stg/prod) | mid (stg/prod) | minimal (prod)
+    ## Environments:
+    ## full-with-drp (dev/stg/prod/drp) | full (dev/stg/prod) | mid (stg/prod) | minimal (prod)
       environments: 'minimal'
-    #- Project
-      projectName: "examples"
-    #- Approvals
-      shamanopsApprovalsProd: 'false'
-    # Feature Flags
-      security_check_enabled: 'false'
-    ###################################################################################################
+    # Project
+      projectName: 'examples'
+    # Approvals
+      shamanopsBusinessApprovers: 'jroca@shamanops.com'
+      shamanopsTechnicalApprovers: 'rocajp@gmail.com'
+      shamanopsBusinessApproversMinimalProd: '1'
+      shamanopsTechnicalApproversMinimalProd: '1'
     secrets:
       shamanops_customer_token: ${{ secrets.shamanops_customer_token }}
       shamanops_argocd_dev_token: ${{ secrets.shamanops_argocd_dev_token }}
