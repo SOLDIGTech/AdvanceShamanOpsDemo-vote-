@@ -16,7 +16,7 @@ jobs:
     # Project
       projectName: 'hipercompumegared'
     # Approvals
-      shamanopsBusinessApprovers: 'jmoctezuma@mikiosko.mx'
+      shamanopsBusinessApprovers: 'jvaldes@soldig.mx''
       shamanopsTechnicalApprovers: 'jvaldes@soldig.mx'
       shamanopsBusinessApproversMinimalProd: '1'
       shamanopsTechnicalApproversMinimalProd: '1'
